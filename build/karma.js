@@ -1,5 +1,5 @@
 import config from '../config';
-import webpackConfig from './webpack/client';
+import webpackConfig from './webpack';
 
 const globals = config.get('globals');
 const KARMA_ENTRY_FILE  = 'karma.entry.js';

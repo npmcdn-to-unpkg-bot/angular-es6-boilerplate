@@ -7,7 +7,7 @@ const paths = config.get('utils_paths');
 
 const server = new WebpackDevServer(webpack(webpackConfig), {
   contentBase : paths.project(config.get('dir_src')),
-  hot    : true,
+  hot    : false,
   quiet  : false,
   noInfo : false,
   lazy   : false,

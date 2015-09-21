@@ -12,7 +12,7 @@ const webpackConfig = {
   devtool : 'inline-source-map',
   entry   : {
     app : [
-      paths.src('entry-points/client')
+      paths.src('index.js')
     ]
   },
   output : {
@@ -33,7 +33,7 @@ const webpackConfig = {
     })
   ],
   resolve : {
-    extensions : ['', '.js', '.jsx'],
+    extensions : ['', '.js'],
     alias : config.get('utils_aliases')
   },
   module : {
@@ -48,7 +48,7 @@ const webpackConfig = {
       {
         test : /\.js$/,
         include :  paths.project(config.get('dir_src')),
-        loaders : ['babel?optional[]=runtime']
+        loaders : ['ng-annotate', 'babel?optional[]=runtime' ]
       },
       {
         test    : /\.scss$/,
@@ -90,7 +90,7 @@ if (globals.__DEV__) {
 );
 
   webpackConfig.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.HotModuleReplacementPlugin(), //Need an Angular Hot Module Replacement, all are very alpha.
     new webpack.NoErrorsPlugin()
   );
 }

@@ -9,19 +9,18 @@
     "start": "npm run dev",
     "dev": "node --harmony bin/webpack-dev-server",
     "dev:debug": "npm run dev -- --debug",
-    "dev:debugnw": "npm run dev -- --debug --nw",
-    "test": "npm run test:unit && npm run test:server",
+    "test": "npm run test:unit",
     "test:unit": "node ./node_modules/karma/bin/karma start",
-    "test:server": "mocha --harmony bin/test-server",
-    "deploy": "npm run test:unit && npm run compile && npm run test:server",
-    "server:start": "node --harmony bin/server",
-    "server:dev": "nodemon --harmony --watch server bin/server"
+    "deploy": "npm run test:unit && npm run compile && npm run test:server"
   },
   "author": "Jesús Quintana <jrqb182@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "angular": "^1.4.5",
+    "angular-translate": "^2.7.2",
     "babel": "^5.8.23",
     "thunkify": "^2.1.2",
+    "ui-router": "0.0.1",
     "yargs": "^3.18.0"
   },
   "devDependencies": {
@@ -48,6 +47,7 @@
     "karma-spec-reporter": "0.0.20",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.2.5",
+    "ng-annotate-loader": "0.0.10",
     "node-sass": "^3.2.0",
     "nodemon": "^1.4.1",
     "phantomjs": "^1.9.17",

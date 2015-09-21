@@ -16,8 +16,7 @@ config.set('globals', {
   'NODE_ENV'     : config.get('env'),
   '__DEV__'      : config.get('env') === 'development',
   '__PROD__'     : config.get('env') === 'production',
-  '__DEBUG__'    : !!argv.debug,
-  '__DEBUG_NW__' : !!argv.nw
+  '__DEBUG__'    : !!argv.debug
 });
 
 // ------------------------------------
@@ -42,13 +41,10 @@ config.set('dir_src',  'client');
 config.set('dir_dist', 'dist');
 
 config.set('vendor_dependencies', [
-  'immutable',
-  'react',
-  'react-redux',
-  'react-router',
-  'redux',
-  'redux-devtools',
-  'redux-devtools/lib/react'
+  'angular',
+  'ui-router',
+  'angular-translate',
+  'angular-sanitize'
 ]);
 
 // ------------------------------------
@@ -69,17 +65,11 @@ const paths = (() => {
 
 config.set('utils_paths', paths);
 config.set('utils_aliases', [
-  'actions',
   'components',
-  'constants',
-  'containers',
-  'dispatchers',
   'layouts',
   'models',
-  'reducers',
   'routes',
   'services',
-  'stores',
   'styles',
   'utils',
   'views'
