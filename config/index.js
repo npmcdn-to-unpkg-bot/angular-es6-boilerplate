@@ -42,13 +42,7 @@ config.set('dir_src',  'client');
 config.set('dir_dist', 'dist');
 
 config.set('vendor_dependencies', [
-  'immutable',
-  'react',
-  'react-redux',
-  'react-router',
-  'redux',
-  'redux-devtools',
-  'redux-devtools/lib/react'
+  'angular',
 ]);
 
 // ------------------------------------

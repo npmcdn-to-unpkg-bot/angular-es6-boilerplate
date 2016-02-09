@@ -12,7 +12,8 @@ const webpackConfig = {
   devtool : 'inline-source-map',
   entry   : {
     app : [
-      paths.src('entry-points/client')
+      'webpack-dev-server/client?http://localhost:8080/',
+      paths.src('index')
     ]
   },
   output : {
@@ -33,17 +34,10 @@ const webpackConfig = {
     })
   ],
   resolve : {
-    extensions : ['', '.js', '.jsx'],
+    extensions : ['', '.js'],
     alias : config.get('utils_aliases')
   },
   module : {
-    preLoaders : [
-      {
-        test : /\.js$/,
-        loaders : ['eslint-loader'],
-        include : paths.project(config.get('dir_src'))
-      }
-    ],
     loaders : [
       {
         test : /\.js$/,
@@ -59,10 +53,6 @@ const webpackConfig = {
         ].join('!'))
       }
     ]
-  },
-  eslint : {
-    configFile : paths.project('.eslintrc'),
-    failOnError : globals.__PROD__
   }
 };
 
